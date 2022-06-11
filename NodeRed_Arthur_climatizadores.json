@@ -1,0 +1,800 @@
+[
+    {
+        "id": "7fbc6040aed12d36",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1a4c1dad4b10314f",
+        "type": "ui_gauge",
+        "z": "7fbc6040aed12d36",
+        "name": "",
+        "group": "962e83f0fef9af3f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 610,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "0c0e5fc14a6fa670",
+        "type": "mqtt in",
+        "z": "7fbc6040aed12d36",
+        "name": "",
+        "topic": "TOPICO_PUBLISH_TEMPERATURA",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "2bc52c51.dbbb94",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "1a4c1dad4b10314f",
+                "6b2fc9c8c2675452",
+                "c451d54b303ce8cf",
+                "111625203074b27c"
+            ]
+        ]
+    },
+    {
+        "id": "6b2fc9c8c2675452",
+        "type": "debug",
+        "z": "7fbc6040aed12d36",
+        "name": "Temp",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "d296c87102f2376c",
+        "type": "mqtt in",
+        "z": "7fbc6040aed12d36",
+        "name": "",
+        "topic": "TOPICO_PUBLISH_CORRENTE",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "2bc52c51.dbbb94",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "bc455f0be39762d2",
+                "96e8f3cf42929427",
+                "7f324200ac058196",
+                "d551f094ee15e7b2"
+            ]
+        ]
+    },
+    {
+        "id": "bc455f0be39762d2",
+        "type": "debug",
+        "z": "7fbc6040aed12d36",
+        "name": "Corrente",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d551f094ee15e7b2",
+        "type": "ui_gauge",
+        "z": "7fbc6040aed12d36",
+        "name": "",
+        "group": "925f235d64332873",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Corrente",
+        "label": "A",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 480,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c451d54b303ce8cf",
+        "type": "ui_chart",
+        "z": "7fbc6040aed12d36",
+        "name": "",
+        "group": "962e83f0fef9af3f",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 490,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "96e8f3cf42929427",
+        "type": "ui_chart",
+        "z": "7fbc6040aed12d36",
+        "name": "",
+        "group": "925f235d64332873",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Corrente",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 480,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "111625203074b27c",
+        "type": "function",
+        "z": "7fbc6040aed12d36",
+        "name": "global_temperatura",
+        "func": "global.set(\"temperatura\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f324200ac058196",
+        "type": "function",
+        "z": "7fbc6040aed12d36",
+        "name": "global_corrente",
+        "func": "global.set(\"corrente\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e486b3adea402095",
+        "type": "debug",
+        "z": "7fbc6040aed12d36",
+        "name": "resultado",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2c3aea05e382cb9e",
+        "type": "inject",
+        "z": "7fbc6040aed12d36",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 460,
+        "wires": [
+            [
+                "632ccf0fe5564023"
+            ]
+        ]
+    },
+    {
+        "id": "632ccf0fe5564023",
+        "type": "function",
+        "z": "7fbc6040aed12d36",
+        "name": "INSERT",
+        "func": " \nvar temperatura = global.get(\"temperatura\");\nvar corrente = global.get(\"corrente\");\n\nmsg.topic = \"INSERT INTO arthurtabela (temperature,humidity) VALUES (\"+temperatura+\",\"+corrente+\" );\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 460,
+        "wires": [
+            [
+                "b4646fde7a8f6e19"
+            ]
+        ]
+    },
+    {
+        "id": "0a7c914f3202d41d",
+        "type": "comment",
+        "z": "7fbc6040aed12d36",
+        "name": "Grava numero aleatorio em mysql",
+        "info": "",
+        "x": 190,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "b4646fde7a8f6e19",
+        "type": "mysql",
+        "z": "7fbc6040aed12d36",
+        "mydb": "9beb301a.3454e8",
+        "name": "conexao_mysql",
+        "x": 480,
+        "y": 460,
+        "wires": [
+            [
+                "e486b3adea402095"
+            ]
+        ]
+    },
+    {
+        "id": "2e141cd21dc4889f",
+        "type": "inject",
+        "z": "7fbc6040aed12d36",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "8f9a91b157e6e5d1"
+            ]
+        ]
+    },
+    {
+        "id": "8f9a91b157e6e5d1",
+        "type": "function",
+        "z": "7fbc6040aed12d36",
+        "name": "SELECT",
+        "func": "msg.topic = \"SELECT temperature as temperatura, humidity as corrente, timeStamp as timeStamp FROM arthurtabela where timeStamp >= now() - 84600;\"\nreturn msg;\n\n//msg.topic = \"SELECT * FROM tempLog where timeStamp >= now() - 84600;\"\n\n//msg.topic = \"SELECT temperature as temperatura, humidity as humidade, timeStamp FROM tempLog where timeStamp >= now() - 84600;\"\n\n//msg.topic = \"INSERT INTO tempLog (temperature,humidity) VALUES (\"+temperatura+\",\"+humidade+\" );\"\n\n//SELECT MAX(\"producaocatanduva\") as producao, time FROM \"Solar_IFSP\"  WHERE time >= now() - 30d GROUP BY time(1d)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 560,
+        "wires": [
+            [
+                "6b98bbf33254a872"
+            ]
+        ]
+    },
+    {
+        "id": "b81c45f97e5d58cd",
+        "type": "comment",
+        "z": "7fbc6040aed12d36",
+        "name": "Mysql: Select últimos 10 dados para grafico e tabela",
+        "info": "",
+        "x": 250,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "0e54c283c9acc2a4",
+        "type": "change",
+        "z": "7fbc6040aed12d36",
+        "name": "Format data",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "(\t  $series := [\t    { \"label\": \"Temperatura (°C)\" , \"field\": \"temperatura\"  },\t    {  \"label\": \"Corrente (A)\", \"field\": \"corrente\" }\t\t  ];\t  $xaxis := \"timeStamp\";\t  [\t    {\t      \"series\": $series.label,\t      \"data\": $series.[\t        (\t          $yaxis := $.field;\t          $$.payload.{\t            \"x\": $lookup($, $xaxis),\t            \"y\": $lookup($, $yaxis)\t          }\t        )\t      ]\t    }\t  ]\t)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 560,
+        "wires": [
+            [
+                "717210e93b7bdc96"
+            ]
+        ]
+    },
+    {
+        "id": "230839e6d96a785f",
+        "type": "debug",
+        "z": "7fbc6040aed12d36",
+        "name": "dados mysql",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "6b98bbf33254a872",
+        "type": "mysql",
+        "z": "7fbc6040aed12d36",
+        "mydb": "9beb301a.3454e8",
+        "name": "conexao_mysql",
+        "x": 480,
+        "y": 560,
+        "wires": [
+            [
+                "0e54c283c9acc2a4",
+                "230839e6d96a785f"
+            ]
+        ]
+    },
+    {
+        "id": "717210e93b7bdc96",
+        "type": "ui_chart",
+        "z": "7fbc6040aed12d36",
+        "name": "24 hours data",
+        "group": "962e83f0fef9af3f",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Gráfico de Temperatura e Corrente",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#00e68c",
+            "#2d2da8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "56ed816c6c285fa6",
+        "type": "inject",
+        "z": "7fbc6040aed12d36",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 660,
+        "wires": [
+            [
+                "20b4d12d20d9ec17"
+            ]
+        ]
+    },
+    {
+        "id": "20b4d12d20d9ec17",
+        "type": "function",
+        "z": "7fbc6040aed12d36",
+        "name": "SELECT",
+        "func": "\nmsg.topic = \"SELECT * FROM arthurtabela order by timeStamp DESC limit 10;\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 660,
+        "wires": [
+            [
+                "53cf2ab2d27d1c06"
+            ]
+        ]
+    },
+    {
+        "id": "310a909fc39c69c2",
+        "type": "comment",
+        "z": "7fbc6040aed12d36",
+        "name": "Mysql: Select últimos 10 dados para grafico e tabela",
+        "info": "",
+        "x": 230,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "53cf2ab2d27d1c06",
+        "type": "mysql",
+        "z": "7fbc6040aed12d36",
+        "mydb": "9beb301a.3454e8",
+        "name": "conexao_mysql",
+        "x": 460,
+        "y": 660,
+        "wires": [
+            [
+                "139fc1b85f590fdd"
+            ]
+        ]
+    },
+    {
+        "id": "139fc1b85f590fdd",
+        "type": "ui_template",
+        "z": "7fbc6040aed12d36",
+        "group": "925f235d64332873",
+        "name": "Tabela com style",
+        "order": 3,
+        "width": "10",
+        "height": 7,
+        "format": "<div layout=\"row\" layout-align=\"start center\">\n  <span flex>Hora</span>\n  <span flex>Temperatura</span>\n  <span flex>Corrente</span>\n</div>\n<div layout=\"row\" layout-align=\"start center\" ng-repeat=\"row in msg.payload\">\n  <span flex style=\"color: green\">{{row.timeStamp}}</span>\n  <span flex style=\"color: red\">{{row.temperature}} °C</span>\n  <span flex style=\"color: black\">{{row.humidity}} A</span>\n\n</div>\n ",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 690,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d699c43f5a1bef3b",
+        "type": "ui_spacer",
+        "z": "7fbc6040aed12d36",
+        "name": "spacer",
+        "group": "39af50e84fcd4646",
+        "order": 2,
+        "width": 13,
+        "height": 1
+    },
+    {
+        "id": "9ac605d83ec9c226",
+        "type": "ui_spacer",
+        "z": "7fbc6040aed12d36",
+        "name": "spacer",
+        "group": "d47fd6c55c040614",
+        "order": 2,
+        "width": 13,
+        "height": 1
+    },
+    {
+        "id": "063f575ca82c19f1",
+        "type": "ui_spacer",
+        "z": "7fbc6040aed12d36",
+        "name": "spacer",
+        "group": "925f235d64332873",
+        "order": 4,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "1b647277f09f4cf9",
+        "type": "ui_spacer",
+        "z": "7fbc6040aed12d36",
+        "name": "spacer",
+        "group": "925f235d64332873",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "09054f356f15c680",
+        "type": "ui_spacer",
+        "z": "7fbc6040aed12d36",
+        "name": "spacer",
+        "group": "925f235d64332873",
+        "order": 6,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "503ba769ef5d879e",
+        "type": "ui_spacer",
+        "z": "7fbc6040aed12d36",
+        "name": "spacer",
+        "group": "925f235d64332873",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "a55c8b74d46c0151",
+        "type": "ui_spacer",
+        "z": "7fbc6040aed12d36",
+        "name": "spacer",
+        "group": "925f235d64332873",
+        "order": 8,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "0d1448e297cdc455",
+        "type": "ui_spacer",
+        "z": "7fbc6040aed12d36",
+        "name": "spacer",
+        "group": "925f235d64332873",
+        "order": 9,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "637872ed96433295",
+        "type": "ui_spacer",
+        "z": "7fbc6040aed12d36",
+        "name": "spacer",
+        "group": "925f235d64332873",
+        "order": 10,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "962e83f0fef9af3f",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "a0394edf655dd4b0",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2bc52c51.dbbb94",
+        "type": "mqtt-broker",
+        "name": "mqtt_local",
+        "broker": "http://projetoarthur.duckdns.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "925f235d64332873",
+        "type": "ui_group",
+        "name": "Corrente",
+        "tab": "a0394edf655dd4b0",
+        "order": 2,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9beb301a.3454e8",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "database-arthur.cwe7yhyw3ojv.us-east-1.rds.amazonaws.com",
+        "port": "3306",
+        "db": "arthurdados",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "39af50e84fcd4646",
+        "type": "ui_group",
+        "name": "MQ2",
+        "tab": "e8b34c708b96aa18",
+        "order": 1,
+        "disp": true,
+        "width": 13,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d47fd6c55c040614",
+        "type": "ui_group",
+        "name": "MQ135",
+        "tab": "e8b34c708b96aa18",
+        "order": 2,
+        "disp": true,
+        "width": 13,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a0394edf655dd4b0",
+        "type": "ui_tab",
+        "name": "Temperatura e Corrente",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e8b34c708b96aa18",
+        "type": "ui_tab",
+        "name": "Gas",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]
